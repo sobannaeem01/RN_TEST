@@ -1,28 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, StyleSheet, Alert, TouchableOpacity, Text, TextInput } from 'react-native';
+import { View, Image, StyleSheet, Alert, TouchableOpacity, Text, TextInput, PanResponder } from 'react-native';
 
 const LogoFromURL = () => {
+  const [name, setNAme] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setpassword] = useState('')
+  const [address, setAddress] = useState('');
+  const [password, setPassword] = useState('');
+  const [cpassword, setCPassword] = useState('');
+  const [blood, setBlood] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(true);
 
-
-  const [heading1] = useState('GET STARTED NOW!');
-  const [heading2] = useState('Enter Your email and get stated right\naway.');
-
-
-
-  useEffect(() => {
-    console.log("Fahad useeffect Initial: ", email);
-  }, []);
-
-  useEffect(() => {
-    console.log("Fahad useeffect called: ", email);
-  }, [email]);
-
-  useEffect(() => {
-    console.log("Fahad useeffect heading: ", email);
-  }, [heading1]);
+  const [isPasswordVisible2, setIsPasswordVisible2] = useState(true);
 
 
 
@@ -44,69 +33,116 @@ const LogoFromURL = () => {
         style={styles.logo}
       />
 
-      <View style={styles.textContainer}>
-        <Text style={styles.textBold}>{heading1}</Text>
-      </View>
-      <View style={styles.backtextContainer}>
-        <Text style={styles.textSimple}>{heading2}</Text>
-      </View>
+     
 
 
 
-      <View style={styles.inputContainer}>
-
-        <Text style={styles.textEmail}>Email:</Text>
-
-
+      <View style={styles.inputContainer6}>
+        <Text style={styles.textinput}>Name:</Text>
         <TextInput
           style={styles.input}
-          placeholder="Enter your email"
-          value={email}
-          onChangeText={setEmail}
+          placeholder="Enter your Name"
+          value={name}
+          onChangeText={setNAme}
           // Prevents auto-capitalization
           autoCapitalize='none'
-          keyboardType="email-address"
-        />
+          keyboardType= 'default'        />
+      </View>  
+      <View style={styles.inputContainer6}>
+          <Text style={styles.textinput}>Phone no:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter Your Phone Number"
+            value={phone}
+            onChangeText={setPhone}
+            autoCapitalize='none'
+            keyboardType='default'
+          />
       </View>
-
-      <View style={styles.inputContainer2}>
-
-
-        <View style={styles.inputContainer}>
-          <Text style={styles.textpassword}>Password:</Text>
+      <View style={styles.inputContainer6}>
+          <Text style={styles.textinput}>Email:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter Your Email"
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize='none'
+            keyboardType= 'email-address'
+          />
+      </View>
+      <View style={styles.inputContainer6}>
+          <Text style={styles.textinput}>Address</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your address"
+            value={address}
+            onChangeText={setAddress}
+            autoCapitalize='none'
+            keyboardType= 'default'
+          />
+      </View>
+    <View style={styles.inputcontainer8}>
+      <View style={styles.inputContainer7}>
+          <Text style={styles.textinput}>Password</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter Your Password"
             value={password}
-            onChangeText={setpassword}
-
             secureTextEntry={isPasswordVisible} // Hide password when false
+            onChangeText={setPassword}
             autoCapitalize='none'
-            keyboardType='default'
-
-
+            keyboardType= 'default'
           />
-        </View>
-
-
+      </View>
         <TouchableOpacity
           onPress={() => {
             setIsPasswordVisible(!isPasswordVisible);
           }} style={styles.emojiButton}>
-            
-          <Text style={styles.emojiText}>
+
+            <Text style={styles.emojiText}>
             {isPasswordVisible ? '🙈' : '👁️'} {/* Emoji toggles */}
-          </Text>
+            </Text>
         </TouchableOpacity>
-
-
+    </View>
+    <View style={styles.inputcontainer8}>
+       <View style={styles.inputContainer7}>
+          <Text style={styles.textinput}>Conform your Password</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Confrom Your Password"
+            value={cpassword}
+            secureTextEntry={isPasswordVisible2} // Hide password when false
+            onChangeText={setCPassword}
+            autoCapitalize='none'
+            keyboardType= 'default'
+          />
       </View>
-
-      <View style={styles.buttonContainer}>
+       <TouchableOpacity
+          onPress={() => {
+            setIsPasswordVisible2(!isPasswordVisible);
+          }} style={styles.emojiButton}>
+           <Text style={styles.emojiText}>
+            {isPasswordVisible2 ? '🙈' : '👁️'} {/* Emoji toggles */}
+           </Text>
+        </TouchableOpacity>
+    </View>
+      
+        <View style={styles.inputContainer6}>
+          <Text style={styles.textinput}>Blood Group</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Confrom Your Password"
+            value={blood}
+            onChangeText={setBlood}
+            autoCapitalize='none'
+            keyboardType= 'default'
+          />
+        </View>
+    <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.roundButton} onPress={handleButtonPress}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
-      </View>
+        </View>
     </View>
 
   );
@@ -126,10 +162,10 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   buttonContainer: {
-    marginTop: 10,
+    marginTop: 30,
     width: '80%',
   },
-
+//register botton
   roundButton: {
     backgroundColor: 'rgb(44, 108, 233)',
     paddingVertical: 15,
@@ -142,69 +178,33 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-
-
-  textContainer: {
-    backgroundColor: 'fafafa',
-    padding: 5,
-    marginTop: 100,
-    width: '100%',
-    alignItems: 'center',
-  },
-  textBold: {
-    fontSize: 32,
-    fontWeight: "900",
-    color: 'black',
-  },
-
-  // Text Container Styles 2
-  backtextContainer: {
-    backgroundColor: 'b1b5bb',
-    padding: 2,
-    marginTop: 5,
-    width: '100%',
-    alignItems: 'center',
-  },
-  textSimple: {
-    fontSize: 15,
-    color: 'black',
-    textAlign: "center"
-
-  },
-
-  //email text 
-  textEmail: {
+ 
+  //TextInput text
+  textinput: {
     fontSize: 20,
     fontWeight: 'light',
     color: 'black',
     //backgroundColor: 'orange',
     textAlign: "left",
-
+    margin: 8
   },
-  //Password text 
-  textpassword: {
-    fontSize: 20,
-    fontWeight: 'light',
-    color: 'black',
-    textAlign: "left",
-
-  },
-  // email input field
-  inputContainer: {
-
+ 
+  // name input field
+  inputContainer6: {
     width: '80%',
     //backgroundColor: 'red',
-
   },
-
-
-  //password input field
-  inputContainer2: {
-    marginTop: 10,
+  inputcontainer8: {
+    width: "80%",
+    alignItems: 'flex-end',
+    flexDirection: 'row', 
+  },
+  // name input field
+  inputContainer7: {
     width: '80%',
-    flexDirection: 'row',
-    alignItems: 'flex-end'
+    //backgroundColor: 'red',
   },
+  //emoji
   emojiButton: {
     padding: 8,
     flexDirection: 'row'
@@ -212,10 +212,6 @@ const styles = StyleSheet.create({
   emojiText: {
     fontSize: 20,
   },
-  //emoji 
-
-
-
   input: {
     marginLeft: 2,
     height: 40,
@@ -226,6 +222,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     color: "black"
   },
+   
 
 });
 
