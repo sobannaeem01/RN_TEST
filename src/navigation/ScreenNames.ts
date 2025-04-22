@@ -3,4 +3,6 @@ export const ScreenNames = {
 
   LoginScreen: "LoginScreen" as const,
 
+  RegisterScreen: "RegisterScreen" as const,
+
 };

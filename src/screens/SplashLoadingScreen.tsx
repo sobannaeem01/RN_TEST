@@ -1,11 +1,12 @@
-import { useNavigation } from "@react-navigation/native"
+import { NavigationProp, useNavigation } from "@react-navigation/native"
 import { Alert, Text, TouchableOpacity, View } from "react-native"
 import { ScreenNames } from "../navigation/ScreenNames";
+import { RootStackParamList } from "../navigation/RootStackParamsList";
 
 
 const SplashLoadingScreen = (props: any) => {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     return (
         <View

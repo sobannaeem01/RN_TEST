@@ -1,7 +1,15 @@
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { View, Image, StyleSheet, Alert, TouchableOpacity, Text, TextInput } from 'react-native';
+import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { RootStackParamList } from '../navigation/RootStackParamsList';
+import { ScreenNames } from '../navigation/ScreenNames';
 
 const LoginScreen = () => {
+
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
+
+
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('')
   const [isPasswordVisible, setIsPasswordVisible] = useState(true);
@@ -93,7 +101,7 @@ const LoginScreen = () => {
           onPress={() => {
             setIsPasswordVisible(!isPasswordVisible);
           }} style={styles.emojiButton}>
-            
+
           <Text style={styles.emojiText}>
             {isPasswordVisible ? '🙈' : '👁️'} {/* Emoji toggles */}
           </Text>
@@ -107,6 +115,34 @@ const LoginScreen = () => {
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
+
+ 
+      <TouchableOpacity style={{
+        backgroundColor: 'rgb(44, 108, 233)',
+        paddingVertical: 15,
+        marginTop: 10,
+        width: '80%',
+
+        paddingHorizontal: 5,
+        borderRadius: 10,
+        alignItems: 'center',
+      }}
+
+        onPress={() => {
+          navigation.navigate(ScreenNames.RegisterScreen, {
+           email2: email,
+           password2: password
+          })
+         
+        }}>
+           
+        <Text style={{
+          color: '#fff',
+          fontSize: 16,
+          fontWeight: 'bold',
+        }}>Register</Text>
+      </TouchableOpacity>
+      
     </View>
 
   );

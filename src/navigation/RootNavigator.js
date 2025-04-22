@@ -20,6 +20,12 @@ export default function RootNavigator() {
         component={Screens.LoginScreen}
         options={{ headerShown: false }}
       />
+
+      <Stack.Screen
+        name={ScreenNames.RegisterScreen}
+        component={Screens.RegisterScreen}
+        options={{ headerShown: false }}
+      />
      
     </Stack.Navigator>
   );
