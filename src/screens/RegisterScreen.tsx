@@ -1,5 +1,5 @@
 import { RouteProp, useRoute } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { RootStackParamList } from '../navigation/RootStackParamsList';
 
@@ -8,7 +8,6 @@ const RegisterScreen = () => {
 
     const route = useRoute<RouteProp<RootStackParamList, 'RegisterScreen'>>();
 
-    const { email2, password2 } = route.params;
 
     const [name, setNAme] = useState('');
     const [phone, setPhone] = useState('');
@@ -22,6 +21,15 @@ const RegisterScreen = () => {
     const [isPasswordVisible2, setIsPasswordVisible2] = useState(true);
 
 
+    useEffect(() => {
+
+        if(!!route.params) {
+            const {email2, password2} = route.params;
+            console.log("My email 2: ", email2);
+        } else {
+            console.log("No Params: ", route.params);
+        }
+    }, []);
 
     const handleButtonPress = () => {
         Alert.alert('Button Pressed!', 'You tapped the button.');
@@ -35,10 +43,6 @@ const RegisterScreen = () => {
         }}
         style={styles.logo}
       /> */}
-
-
-      <Text>{email2}</Text>
-      <Text>{password2}</Text>
 
             <Image
                 source={require("../assets/googleLogo.png")}
@@ -165,7 +169,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         flex: 1,
-        paddingTop: 50,
+        paddingTop: 5,
         backgroundColor: 'f8f8f8',
     },
     logo: {
