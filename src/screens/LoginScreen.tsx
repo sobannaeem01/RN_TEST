@@ -112,7 +112,10 @@ const LoginScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.roundButton} onPress={handleButtonPress}>
+        <TouchableOpacity style={styles.roundButton} onPress={() => {
+          navigation.navigate(ScreenNames.Dashboardscreen)
+    
+        }}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>

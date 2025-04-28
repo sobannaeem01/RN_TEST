@@ -5,4 +5,6 @@ export const ScreenNames = {
 
   RegisterScreen: "RegisterScreen" as const,
 
+  Dashboardscreen: "Dashboardscreen" as const,
+
 };

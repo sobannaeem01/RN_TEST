@@ -26,6 +26,13 @@ export default function RootNavigator() {
         component={Screens.RegisterScreen}
         options={{ headerShown: false }}
       />
+      
+      <Stack.Screen
+        name={ScreenNames.Dashboardscreen}
+        component={Screens.Dashboardscreen}
+        options={{ headerShown: false }}
+      />
+     
      
     </Stack.Navigator>
   );

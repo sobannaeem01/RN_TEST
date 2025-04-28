@@ -8,7 +8,6 @@ const RegisterScreen = () => {
 
     const route = useRoute<RouteProp<RootStackParamList, 'RegisterScreen'>>();
 
-
     const [name, setNAme] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
