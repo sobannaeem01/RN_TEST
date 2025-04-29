@@ -1,6 +1,9 @@
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+import { TextInput } from 'react-native-paper';
+
 import { RootStackParamList } from '../navigation/RootStackParamsList';
 import { ScreenNames } from '../navigation/ScreenNames';
 
@@ -12,7 +15,7 @@ const LoginScreen = () => {
 
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('')
-  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+  const [isPasswordVisible, setIsPasswordVisible] = useState();
 
 
   const [heading1] = useState('GET STARTED NOW!');
@@ -62,54 +65,24 @@ const LoginScreen = () => {
 
 
 
-      <View style={styles.inputContainer}>
+     
 
-        <Text style={styles.textEmail}>Email:</Text>
-
-
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your email"
-          value={email}
-          onChangeText={setEmail}
-          // Prevents auto-capitalization
-          autoCapitalize='none'
-          keyboardType="email-address"
-        />
-      </View>
-
-      <View style={styles.inputContainer2}>
+      <View style={{
+        backgroundColor: "red",
+        height: 100,
+        width: '100%'
+      }}>
 
 
-        <View style={styles.inputContainer}>
-          <Text style={styles.textpassword}>Password:</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Enter Your Password"
-            value={password}
-            onChangeText={setpassword}
-
-            secureTextEntry={isPasswordVisible} // Hide password when false
-            autoCapitalize='none'
-            keyboardType='default'
-
-
-          />
-        </View>
-
-
-        <TouchableOpacity
-          onPress={() => {
-            setIsPasswordVisible(!isPasswordVisible);
-          }} style={styles.emojiButton}>
-
-          <Text style={styles.emojiText}>
-            {isPasswordVisible ? '🙈' : '👁️'} {/* Emoji toggles */}
-          </Text>
-        </TouchableOpacity>
-
+      
+<TextInput
+      label="Password"
+      right={<TextInput.Icon icon={"eye" } />}
+    />
 
       </View>
+
+
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.roundButton} onPress={() => {
