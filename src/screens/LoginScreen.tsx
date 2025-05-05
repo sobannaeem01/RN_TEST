@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   },
 
   roundButton: {
-    backgroundColor: 'rgb(44, 108, 233)',
+    backgroundColor: 'rgb(11, 33, 77)',
     paddingVertical: 15,
     paddingHorizontal: 5,
     borderRadius: 10,

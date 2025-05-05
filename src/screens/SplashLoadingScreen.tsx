@@ -46,13 +46,13 @@ const SplashLoadingScreen = (props: any) => {
                 }}
 
                     onPress={() => {
-                        navigation.navigate(ScreenNames.LoginScreen)
+                        navigation.navigate(ScreenNames.Dashboardscreen)
                     }}>
                     <Text style={{
                         color: '#fff',
                         fontSize: 16,
                         fontWeight: 'bold',
-                    }}>LogIn</Text>
+                    }}>Login</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{
