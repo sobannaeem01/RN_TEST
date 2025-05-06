@@ -13,58 +13,193 @@ const Dashboardscreen = (props: any) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
-    <View style={styles.container}>
+    <View style={{
 
-      <Text style={styles.textinput}>IPTV</Text>
+      flex: 1,
+      backgroundColor: 'rgb(29, 29, 43)',
+      flexDirection: 'column',
+      justifyContent: "flex-start",
+      alignItems: 'flex-start'
 
-      <View style={styles.container1}>
+      // paddingTop: 2,
+      //backgroundColor: 'f8f8f8',
+    }}>
+
+      <View style={{
+        width: "100%",
+        // height: "50%",
+        alignItems: "flex-start",
+        justifyContent: 'flex-start',
+        flexDirection: "row",
+        backgroundColor: "orange"
+      }}>
+        <Text style={{
+          fontSize: 40,
+          fontWeight: '400',
+          color: 'white',
+          //backgroundColor: 'orange',
+          //justifyContent: 'flex-start',
+          textAlign: 'left',
+        }}>IPTV</Text>
+
+      </View>
 
 
-        {/* Button # 1 */}
-        <TouchableOpacity style={styles.button1} onPress={handleButtonPress}>
+      <View style={{
+        flex: 1,
+        width: "100%",
+        // height: "100%",
+        padding: 10,
+        flexDirection: "row",
+        // justifyContent: 'center',
+        alignItems: "flex-start",
+        backgroundColor: "blue"
 
-          {/* Button # 1 Header Section */}
-          <View style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "blue"
-          }}>
+      }}>
 
-            <TouchableOpacity activeOpacity={0.5} onPress={() => {
-              Alert.alert("Hello from FAghad")
+
+        <View style={{
+          height: "100%",
+          width: "70%",
+          flexDirection: "row",
+          backgroundColor: "orange",
+          justifyContent: "space-between",
+          alignItems: 'flex-start'
+        }}>
+          {/* Button # 1 */}
+          <TouchableOpacity style={styles.button1} onPress={handleButtonPress}>
+            <View style={{
+              //backgroundColor: "red"
             }}>
-              <Icon
-                source="camera"
-                color={"orange"}
-                size={50}
-              />
-            </TouchableOpacity>
-            <Text style={{
-              color: "#878787"
-            }}>Last Updated: </Text>
-            <Text style={styles.Label}> 2 Days ago</Text>
-          </View>
+              {/* Button # 1 Header Section */}
+              <View style={{
+                flexDirection: "row",
+                alignItems: "center",
+                //backgroundColor: 'yellow'
 
-          <Icon source="movie-filter" color={"grey"} size={30} />
-          <Text style={styles.buttonText}>Live TV</Text>
-          <Text style={styles.buttonText2}>+15000 Channels</Text>
+              }}>
 
-        </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => {
+                  Alert.alert("Refreshing...")
+                }}>
+                  <Icon
+                    source="refresh-circle"
+                    color={"rgb(106, 92, 178)"}
+                    size={25}
+                  />
+                </TouchableOpacity>
+                <Text style={styles.Label}> 2 Days ago</Text>
+              </View>
+            </View>
 
-        {/* Button # 2 */}
-        <TouchableOpacity style={styles.button2} onPress={handleButtonPress}>
-          <Icon source="television-classic" color={"grey"} size={30} />
-          <Text style={styles.buttonText}>Movies</Text>
-          <Text style={styles.buttonText2}>+100 Movies</Text>
-        </TouchableOpacity>
+            <View style={{
+              // paddingTop: 150,
+              // padding
+              // paddingHorizontal: 10,
+              //backgroundColor: 'yellow'
 
-        {/* Button # 3 */}
-        <TouchableOpacity style={styles.button3} onPress={handleButtonPress}>
-          <Icon source="movie-roll" color={"grey"} size={30} />
-          <Text style={styles.buttonText}>Series</Text>
-          <Text style={styles.buttonText2}>+500 Series</Text>
-        </TouchableOpacity>
+            }}>
+              <Icon source="television-classic" color={"grey"} size={30} />
+              <Text style={styles.buttonText}>Live TV</Text>
+              <Text style={styles.buttonText2}>+15000 Channels</Text>
 
+            </View>
+
+          </TouchableOpacity>
+
+          {/* Button # 2 */}
+          <TouchableOpacity style={styles.button1} onPress={handleButtonPress}>
+            <View style={{
+              //backgroundColor: "red"
+            }}>
+              {/* Button # 1 Header Section */}
+              <View style={{
+                flexDirection: "row",
+                alignItems: "center",
+                //backgroundColor: 'yellow'
+
+              }}>
+
+                <TouchableOpacity activeOpacity={0.5} onPress={() => {
+                  Alert.alert("Refreshing...")
+                }}>
+                  <Icon
+                    source="refresh-circle"
+                    color={"rgb(106, 92, 178)"}
+                    size={25}
+                  />
+                </TouchableOpacity>
+                <Text style={styles.Label}> 2 Days ago</Text>
+              </View>
+            </View>
+
+            <View style={{
+              // paddingTop: 150,
+              // padding
+              // paddingHorizontal: 10,
+              //backgroundColor: 'yellow'
+
+            }}>
+              <Icon source="video-vintage" color={"grey"} size={30} />
+              <Text style={styles.buttonText}>Movies</Text>
+              <Text style={styles.buttonText2}>+1500 Movies</Text>
+
+            </View>
+
+          </TouchableOpacity>
+
+
+          {/* Button # 3 */}
+          <TouchableOpacity style={styles.button1} onPress={handleButtonPress}>
+            <View style={{
+              //backgroundColor: "red"
+            }}>
+              {/* Button # 1 Header Section */}
+              <View style={{
+                flexDirection: "row",
+                alignItems: "center",
+                //backgroundColor: 'yellow'
+
+              }}>
+
+                <TouchableOpacity activeOpacity={0.5} onPress={() => {
+                  Alert.alert("Refreshing...")
+                }}>
+                  <Icon
+                    source="refresh-circle"
+                    color={"rgb(106, 92, 178)"}
+                    size={25}
+                  />
+                </TouchableOpacity>
+                <Text style={styles.Label}> 2 Days ago</Text>
+              </View>
+            </View>
+
+            <View style={{
+              // paddingTop: 150,
+              // padding
+              // paddingHorizontal: 10,
+              //backgroundColor: 'yellow'
+
+            }}>
+              <Icon source="television-classic" color={"grey"} size={30} />
+              <Text style={styles.buttonText}>Live TV</Text>
+              <Text style={styles.buttonText2}>+15000 Channels</Text>
+
+            </View>
+
+          </TouchableOpacity>
+
+        </View>
+
+        <View style={{
+          flex: 1,
+          height: 100,
+          // marginLeft: 10,
+          backgroundColor: "purple"
+        }}>
+
+        </View>
       </View>
 
 
@@ -74,12 +209,11 @@ const Dashboardscreen = (props: any) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+
     flex: 1,
     backgroundColor: 'rgb(29, 29, 43)',
     flexDirection: 'column',
-    paddingTop: 2,
+    // paddingTop: 2,
     //backgroundColor: 'f8f8f8',
   },
 
@@ -90,54 +224,45 @@ const styles = StyleSheet.create({
     //backgroundColor: 'orange',
     //justifyContent: 'flex-start',
     textAlign: 'left',
-    margin: 10,
   },
   container1: {
+    flex: 1,
     flexDirection: "row",
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: "red"
 
   },
   button1: {
-    marginLeft: 20,
-    //alignItems: 'flex-start',
+    height: "100%",
+    width: '32%',
+    // marginLeft: 20,
+    alignItems: 'flex-start',
     backgroundColor: 'rgb(35, 32, 50)',
-    //paddingVertical: 20,
-    //paddingHorizontal: 25,
     padding: 20,
+    justifyContent: 'space-between',
     borderRadius: 20,
   },
-  button2: {
-    backgroundColor: 'rgb(35, 32, 50)',
-    //paddingVertical: 20,
-    //paddingHorizontal: 25,
-    padding: 50,
-    borderRadius: 20,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  button3: {
-    backgroundColor: 'rgb(35, 32, 50)',
-    //paddingVertical: 20,
-    padding: 60,
-    borderRadius: 20,
-    marginTop: 10,
-    marginLeft: 20,
-  },
+
   buttonText: {
     color: '#fff',
-    fontSize: 20,
-    fontWeight: '300',
+    fontSize: 25,
+    fontWeight: '400',
     //textAlign: 'left'
+
   },
 
   buttonText2: {
-    fontSize: 12,
+    fontSize: 15,
+    color: 'grey'
 
   },
-  lable: {
-    fontSize: 10,
-  }
+  Label: {
+    fontSize: 12,
+    color: 'grey',
+
+  },
+
 });
 
 export default Dashboardscreen;

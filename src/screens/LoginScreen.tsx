@@ -42,7 +42,7 @@ const LoginScreen = () => {
   };
 
   return (
-    
+
     <View style={styles.container}>
       {/* <Image
         source={{
@@ -65,7 +65,7 @@ const LoginScreen = () => {
 
 
 
-     
+
 
       <View style={{
         backgroundColor: "red",
@@ -74,11 +74,11 @@ const LoginScreen = () => {
       }}>
 
 
-      
-<TextInput
-      label="Password"
-      right={<TextInput.Icon icon={"eye" } />}
-    />
+
+        <TextInput
+          label="Password"
+          right={<TextInput.Icon icon={"eye"} />}
+        />
 
       </View>
 
@@ -87,13 +87,13 @@ const LoginScreen = () => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.roundButton} onPress={() => {
           navigation.navigate(ScreenNames.Dashboardscreen)
-    
+
         }}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
 
- 
+
       <TouchableOpacity style={{
         backgroundColor: 'rgb(44, 108, 233)',
         paddingVertical: 15,
@@ -107,19 +107,19 @@ const LoginScreen = () => {
 
         onPress={() => {
           navigation.navigate(ScreenNames.RegisterScreen, {
-           email2: email,
-           password2: password
+            email2: email,
+            password2: password
           })
-         
+
         }}>
-           
+
         <Text style={{
           color: '#fff',
           fontSize: 16,
           fontWeight: 'bold',
         }}>Register</Text>
       </TouchableOpacity>
-      
+
     </View>
 
   );

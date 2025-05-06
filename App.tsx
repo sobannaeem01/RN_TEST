@@ -29,8 +29,8 @@ function App(): React.JSX.Element {
 
       <View style={{
         flex: 1,
-        paddingTop: 30,
-        backgroundColor: "red",
+        // paddingTop: 30,
+        // backgroundColor: "red",
 
       }}>
 
